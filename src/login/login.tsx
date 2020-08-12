@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { Formik, Form, useFormik, useField, FieldInputProps, Field, ErrorMessage } from 'formik';
-
+ import style from "./login.module.css"
 
 // interface MyTextInputProps extends FieldInputProps<""> {
 //   label: string;
@@ -64,8 +64,6 @@ export default function Login() {
         }
     });
 
-
-
     return (
       <Formik
       initialValues={{ firstName: '', lastName: '', email: '' }}
@@ -78,18 +76,19 @@ export default function Login() {
       }}
 
     >
-      <Form>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" type="text" />
-        <ErrorMessage name="firstName" />
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" type="text" />
-        <ErrorMessage name="lastName" />
-        <label htmlFor="email">Email Address</label>
-        <Field name="email" type="email" />
-        <ErrorMessage name="email" />
-        <button type="submit">Submit</button>
+        <Form className={style.container}>
+            <label htmlFor="firstName">First Name</label>
+            <Field name="firstName" type="text" />
+            <ErrorMessage name="firstName" /><br/>
+            <label htmlFor="lastName">Last Name</label>
+            <Field name="lastName" type="text" />
+            <ErrorMessage name="lastName" /><br/>
+            <label htmlFor="email">Email Address</label>
+            <Field name="email" type="email" /> 
+            <ErrorMessage name="email" /><br />
+            <button type="submit">Submit</button>
       </Form>
+     
     </Formik>
 
 
